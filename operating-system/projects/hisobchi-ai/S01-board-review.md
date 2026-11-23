@@ -4,7 +4,7 @@
 **Mode:** `SIMULATED_BOARD_REVIEW` — four viewpoints from one model, not autonomous agents.  
 **Date:** 2026-11-23  
 **Input:** `S00-evidence-and-gate.md`, `S01-source-truth-contract.md`, `S01-product-strategy.md`  
-**Status:** `NEEDS_OWNER_DECISION` | **Owner approval:** `PENDING`
+**Current status:** `APPROVED_BY_OWNER` for first-MVP primary task **only** (2026-11-23); earlier Board comments below represent pre-approval review.
 
 ## Round 1 — separate role positions
 
@@ -31,6 +31,6 @@ These are stage-readiness opinions, not the final 100-point design quality score
 
 ## Proposed resolution / gate
 
-`S01=NOT_STARTED (draft prepared)`, `status=NEEDS_OWNER_DECISION`. Recommend A for initial design/QA proof, but Owner may choose otherwise. **No S02 PASS, no S03 wireframe lock, no S04 creative selection.**
+**Reconciled with Owner's explicit decision:** `S01=PASSED` (first-MVP task only), `S02=IN_PROGRESS`. The recommendation above was not an approval when written; Owner later approved A explicitly. See `S00-S01-owner-decisions.md`. **No S02 PASS, S03 wireframe lock or S04 creative selection is implied.**
 
-**Next observable action:** Owner decides primary job and audience, then Board revisits S01 and records `APPROVED_BY_OWNER` or revision with evidence. Preserve existing finance data contracts. No fake numeric quality score.
+**Next observable action after Owner approval:** conduct S02 IA review, record navigation/failed-state coverage and evaluate evidence. Audience remains a hypothesis; finance data contracts stay unchanged; no numeric quality score is claimed.

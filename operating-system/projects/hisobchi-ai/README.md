@@ -6,9 +6,9 @@
 
 | Stage | Status | Output / next decision |
 |---|---|---|
-| S00 Evidence & baseline | **NEEDS_EVIDENCE** | `S00-evidence-and-gate.md`; owner to confirm scope/top-task |
-| S01 Strategy | **NOT_STARTED** (draft prepared) | `S01-product-strategy.md`, `S01-board-review.md`; owner review, not approval |
-| S02 IA | **NOT_STARTED** (candidate sketch only) | `S02-IA-provisional.md`; cannot mark PASSED until S01 approved |
+| S00 Evidence & baseline | **PASSED (scoped)** | `S00-evidence-and-gate.md`; owner to confirm scope/top-task |
+| S01 Strategy | **PASSED (first MVP task)** | `S01-product-strategy.md`, `S01-board-review.md`; owner review, not approval |
+| S02 IA | **IN_PROGRESS** (official) | `S02-IA-provisional.md`; cannot mark PASSED until S01 approved |
 | S03–S12 | NOT_STARTED | No visual tokens, components, implementation or release authorized |
 
 The **current project state** is stored in `../hisobchi-ai.json`. `S01-decision-proposal.json` is a review proposal with **owner_approved=false**, not a runtime product configuration.
@@ -19,17 +19,17 @@ The **current project state** is stored in `../hisobchi-ai.json`. `S01-decision-
 2. `S01-source-truth-contract.md` — authoritative **demo/session** arithmetic and clear UI labels.
 3. `S01-product-strategy.md` — two distinct user jobs and recommended first slice.
 4. `S01-board-review.md` — 4 simulated perspectives, conflicts, open risks.
-5. `S01-decision-proposal.json` — machine-readable unapproved decision and test fixture.
-6. `S02-IA-provisional.md` — **only** a candidate, NOT a finished S02.
+5. `S01-decision-proposal.json` — machine-readable Owner-approved first-MVP decision; **not a visual or release approval**.
+6. `S02-IA-provisional.md` — earlier historical sketch; see `S02-screen-map.md`, `S02-task-flows.md`, `S02-navigation.json`, `S02-state-matrix.csv`, `S02-board-review.md` and `S02-acceptance-checks.md` for active S02 work.
 
 ## Owner decision
 
-**Choose the first release's one primary job**:
+**Owner chose the first MVP's primary job on 2026-11-23:**
 - `A_RECORD_EXPENSE`: a testable demo/session workflow; Home → add → correct list and Analytics.
 - `B_SAFE_TO_SPEND`: differentiated vision, **currently blocked** for live numeric promises by missing finance engine and verified balance.
 - `OTHER`: owner-proposed user job, requiring reworked S01.
 
-If Owner approves A for a **development prototype**, complete S00 decision record and S01 signoff, then make official S02 IA and S03 wireframes. Do not automatically claim owner approval from the existence of a GitHub PR.
+Owner explicitly approved A for the first MVP; see `S00-S01-owner-decisions.md`. S02 is now in official architecture development. S03 wireframes are still blocked until S02 passes a separate Board gate. The audience hypothesis and real Safe-to-Spend remain unapproved.
 
 ## Validation
 

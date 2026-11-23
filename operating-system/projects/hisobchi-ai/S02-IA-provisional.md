@@ -1,7 +1,7 @@
 # Hisobchi AI — S02 Information Architecture (HYPOTHESIS ONLY)
 
-**Status:** `PROVISIONAL_NOT_APPROVED` / S02 **NOT_STARTED** as a governed stage.  
-**Dependency:** S00 stage gate and S01 Owner-approved primary job. This document is a reversible sketch for faster review, **NOT** a completed S02, wireframe, approved layout, or component design.  
+**Status:** HISTORICAL PROVISIONAL DRAFT (superseded for active work by `S02-screen-map.md` and `S02-navigation.json`). S02 is now `IN_PROGRESS`, not PASSED.  
+**Dependency update:** scoped S00 and S01 have passed after explicit Owner authorization; active S02 specification is in the files above. This older A/B comparison remains a research sketch, not a completed or approved design.  
 **Source:** `S01-source-truth-contract.md`; actual navigation at [App.tsx](https://github.com/abdulazizganiyev255-ship-it/hisobchi-ai-mobile/blob/design/splus-living-ledger-analytics-v03/App.tsx).  
 **Mode:** Planning by one ChatGPT, not independent designer agents.
 
@@ -111,4 +111,4 @@ These transitions come from current source logic but **must be reverified** when
 - Architect: can each screen use the exact current domain data without changing semantics?
 - Reviewer: which assumptions can be tested on real device and where could the UI mislead?
 
-**Gate:** S02 remains `NOT_STARTED` until S00 and S01 required approvals are recorded. No component palette, screenshot, code merge, or "passed QA" follows from this document.
+**Gate update:** S02 is `IN_PROGRESS`, not PASSED. No component palette, screenshot, code merge or "passed QA" follows from this historical sketch.

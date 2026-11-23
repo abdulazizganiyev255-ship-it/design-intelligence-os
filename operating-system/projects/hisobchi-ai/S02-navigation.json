@@ -1,0 +1,402 @@
+{
+  "version": "0.1.0",
+  "project_id": "hisobchi-ai",
+  "stage": "S02",
+  "stage_status": "IN_PROGRESS",
+  "owner_job": "A_RECORD_EXPENSE",
+  "owner_job_approval_record": "operating-system/projects/hisobchi-ai/S00-S01-owner-decisions.md",
+  "board_mode": "SIMULATED_BOARD_REVIEW",
+  "ia_selection": "ACTION_FIRST_LEDGER_WORKING_DIRECTION",
+  "navigation_approved": false,
+  "production_ready": false,
+  "source_branch": "design/splus-living-ledger-analytics-v03",
+  "data_mode": "LOCAL_DEMO_SESSION",
+  "screens": [
+    {
+      "id": "HOME",
+      "kind": "TAB",
+      "label": "Bosh sahifa",
+      "priority": "one primary expense action",
+      "source": "App.tsx"
+    },
+    {
+      "id": "HISTORY",
+      "kind": "TAB",
+      "label": "Operatsiyalar",
+      "priority": "find/edit records and filters",
+      "source": "App.tsx"
+    },
+    {
+      "id": "ANALYTICS",
+      "kind": "TAB",
+      "label": "Tahlil",
+      "priority": "period-scoped income, expense, net",
+      "source": "App.tsx"
+    },
+    {
+      "id": "PROFILE",
+      "kind": "TAB",
+      "label": "Profil",
+      "priority": "demo state/help/reset",
+      "source": "App.tsx"
+    },
+    {
+      "id": "EDITOR_NEW",
+      "kind": "CONTEXT_SCREEN",
+      "label": "Yangi operatsiya",
+      "priority": "amount, category, valid date, optional note",
+      "source": "App.tsx and LedgerTransactionEditorScreen.tsx"
+    },
+    {
+      "id": "EDITOR_EDIT",
+      "kind": "CONTEXT_SCREEN",
+      "label": "Operatsiyani tahrirlash",
+      "priority": "edit/cancel/delete with confirmation",
+      "source": "App.tsx and LedgerTransactionEditorScreen.tsx"
+    },
+    {
+      "id": "DATE_PICKER",
+      "kind": "MODAL",
+      "label": "Sana tanlash",
+      "priority": "valid calendar, nonfuture",
+      "source": "LedgerDateCalendar.tsx"
+    },
+    {
+      "id": "DELETE_CONFIRM",
+      "kind": "MODAL",
+      "label": "O‘chirishni tasdiqlash",
+      "priority": "non-destructive cancel",
+      "source": "LedgerTransactionEditorScreen.tsx"
+    },
+    {
+      "id": "RESET_CONFIRM",
+      "kind": "MODAL",
+      "label": "Demo yozuvlarni tiklash",
+      "priority": "explicit reset confirmation",
+      "source": "OtherScreens.tsx"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "TR-01",
+      "from": "HOME",
+      "event": "tap_add_expense",
+      "to": "EDITOR_NEW",
+      "guard": "none",
+      "effect": "new expense draft",
+      "recovery": "cancel_origin_home"
+    },
+    {
+      "id": "TR-02",
+      "from": "HISTORY",
+      "event": "tap_add_expense",
+      "to": "EDITOR_NEW",
+      "guard": "none",
+      "effect": "new expense draft",
+      "recovery": "cancel_origin_history"
+    },
+    {
+      "id": "TR-03",
+      "from": "EDITOR_NEW",
+      "event": "cancel_origin_home",
+      "to": "HOME",
+      "guard": "entry_origin_HOME",
+      "effect": "no mutation",
+      "recovery": "HOME"
+    },
+    {
+      "id": "TR-04",
+      "from": "EDITOR_NEW",
+      "event": "cancel_origin_history",
+      "to": "HISTORY",
+      "guard": "entry_origin_HISTORY",
+      "effect": "no mutation",
+      "recovery": "HISTORY"
+    },
+    {
+      "id": "TR-05",
+      "from": "EDITOR_NEW",
+      "event": "save_valid",
+      "to": "HISTORY",
+      "guard": "positive whole amount; allowed category; ISO nonfuture date",
+      "effect": "append signed negative expense and recompute session",
+      "recovery": "editor errors if invalid"
+    },
+    {
+      "id": "TR-06",
+      "from": "EDITOR_NEW",
+      "event": "submit_invalid",
+      "to": "EDITOR_NEW",
+      "guard": "invalid fields",
+      "effect": "field-specific errors; no mutation",
+      "recovery": "correct input and retry"
+    },
+    {
+      "id": "TR-07",
+      "from": "HISTORY",
+      "event": "select_row",
+      "to": "EDITOR_EDIT",
+      "guard": "row exists",
+      "effect": "open existing draft",
+      "recovery": "cancel"
+    },
+    {
+      "id": "TR-08",
+      "from": "EDITOR_EDIT",
+      "event": "cancel",
+      "to": "HISTORY",
+      "guard": "none",
+      "effect": "no mutation",
+      "recovery": "HISTORY"
+    },
+    {
+      "id": "TR-09",
+      "from": "EDITOR_EDIT",
+      "event": "save_valid",
+      "to": "HISTORY",
+      "guard": "valid fields",
+      "effect": "update selected record and recompute",
+      "recovery": "error if invalid"
+    },
+    {
+      "id": "TR-10",
+      "from": "EDITOR_EDIT",
+      "event": "delete_request",
+      "to": "DELETE_CONFIRM",
+      "guard": "existing row",
+      "effect": "no mutation yet",
+      "recovery": "cancel"
+    },
+    {
+      "id": "TR-11",
+      "from": "DELETE_CONFIRM",
+      "event": "cancel",
+      "to": "EDITOR_EDIT",
+      "guard": "none",
+      "effect": "no mutation",
+      "recovery": "EDITOR_EDIT"
+    },
+    {
+      "id": "TR-12",
+      "from": "DELETE_CONFIRM",
+      "event": "confirm",
+      "to": "HISTORY",
+      "guard": "explicit confirm",
+      "effect": "delete selected row and recompute",
+      "recovery": "none"
+    },
+    {
+      "id": "TR-13",
+      "from": "EDITOR_NEW",
+      "event": "open_calendar",
+      "to": "DATE_PICKER",
+      "guard": "none",
+      "effect": "draft preserved",
+      "recovery": "cancel"
+    },
+    {
+      "id": "TR-14",
+      "from": "EDITOR_EDIT",
+      "event": "open_calendar",
+      "to": "DATE_PICKER",
+      "guard": "none",
+      "effect": "draft preserved",
+      "recovery": "cancel"
+    },
+    {
+      "id": "TR-15",
+      "from": "DATE_PICKER",
+      "event": "confirm_for_new",
+      "to": "EDITOR_NEW",
+      "guard": "valid nonfuture day",
+      "effect": "update draft date only",
+      "recovery": "cancel"
+    },
+    {
+      "id": "TR-16",
+      "from": "DATE_PICKER",
+      "event": "confirm_for_edit",
+      "to": "EDITOR_EDIT",
+      "guard": "valid nonfuture day",
+      "effect": "update draft date only",
+      "recovery": "cancel"
+    },
+    {
+      "id": "TR-17",
+      "from": "HOME",
+      "event": "open_history",
+      "to": "HISTORY",
+      "guard": "editor closed",
+      "effect": "no mutation",
+      "recovery": "HOME"
+    },
+    {
+      "id": "TR-18",
+      "from": "HISTORY",
+      "event": "open_analytics",
+      "to": "ANALYTICS",
+      "guard": "editor closed",
+      "effect": "report from session",
+      "recovery": "HISTORY"
+    },
+    {
+      "id": "TR-19",
+      "from": "ANALYTICS",
+      "event": "open_history",
+      "to": "HISTORY",
+      "guard": "editor closed",
+      "effect": "no mutation",
+      "recovery": "ANALYTICS"
+    },
+    {
+      "id": "TR-20",
+      "from": "HISTORY",
+      "event": "filter_or_search",
+      "to": "HISTORY",
+      "guard": "valid filters or explicit error",
+      "effect": "derive visible subset and totals",
+      "recovery": "clear filter"
+    },
+    {
+      "id": "TR-21",
+      "from": "ANALYTICS",
+      "event": "change_period",
+      "to": "ANALYTICS",
+      "guard": "valid date range",
+      "effect": "recalculate period report",
+      "recovery": "cancel selection"
+    },
+    {
+      "id": "TR-22",
+      "from": "PROFILE",
+      "event": "reset_request",
+      "to": "RESET_CONFIRM",
+      "guard": "none",
+      "effect": "no mutation yet",
+      "recovery": "cancel"
+    },
+    {
+      "id": "TR-23",
+      "from": "RESET_CONFIRM",
+      "event": "cancel",
+      "to": "PROFILE",
+      "guard": "none",
+      "effect": "no mutation",
+      "recovery": "PROFILE"
+    },
+    {
+      "id": "TR-24",
+      "from": "RESET_CONFIRM",
+      "event": "confirm",
+      "to": "PROFILE",
+      "guard": "explicit confirmation",
+      "effect": "reset local seed session",
+      "recovery": "none"
+    },
+    {
+      "id": "TR-25",
+      "from": "HOME",
+      "event": "open_profile_tab",
+      "to": "PROFILE",
+      "guard": "editor closed",
+      "effect": "no mutation",
+      "recovery": "HOME"
+    },
+    {
+      "id": "TR-26",
+      "from": "PROFILE",
+      "event": "open_home_tab",
+      "to": "HOME",
+      "guard": "editor closed",
+      "effect": "no mutation",
+      "recovery": "PROFILE"
+    },
+    {
+      "id": "TR-27",
+      "from": "HOME",
+      "event": "open_analytics_tab",
+      "to": "ANALYTICS",
+      "guard": "editor closed",
+      "effect": "no mutation",
+      "recovery": "HOME"
+    },
+    {
+      "id": "TR-28",
+      "from": "DATE_PICKER",
+      "event": "cancel_for_new",
+      "to": "EDITOR_NEW",
+      "guard": "calendar_origin_editor_new",
+      "effect": "draft date unchanged; no mutation",
+      "recovery": "EDITOR_NEW"
+    },
+    {
+      "id": "TR-29",
+      "from": "DATE_PICKER",
+      "event": "cancel_for_edit",
+      "to": "EDITOR_EDIT",
+      "guard": "calendar_origin_editor_edit",
+      "effect": "draft date unchanged; no mutation",
+      "recovery": "EDITOR_EDIT"
+    },
+    {
+      "id": "TR-30",
+      "from": "DATE_PICKER",
+      "event": "choose_invalid_day",
+      "to": "DATE_PICKER",
+      "guard": "future or invalid day",
+      "effect": "no selection; inline validation",
+      "recovery": "cancel or choose allowed day"
+    }
+  ],
+  "primary_path": [
+    "TR-01",
+    "TR-05",
+    "TR-18"
+  ],
+  "cancel_paths": [
+    "TR-03",
+    "TR-04",
+    "TR-08",
+    "TR-11",
+    "TR-23",
+    "TR-28",
+    "TR-29"
+  ],
+  "invalid_paths": [
+    "TR-06"
+  ],
+  "data_invariants": {
+    "fixture_scope": "ALL_SEEDED_TRANSACTIONS",
+    "before": {
+      "count": 5,
+      "income": 3000000,
+      "expense": 259000,
+      "net": 2741000,
+      "turnover": 3259000
+    },
+    "action": {
+      "kind": "expense",
+      "amount": 100000
+    },
+    "after": {
+      "count": 6,
+      "income": 3000000,
+      "expense": 359000,
+      "net": 2641000,
+      "turnover": 3359000
+    },
+    "unchanged_samples": {
+      "balance": 12850000,
+      "safe_to_spend_demo": 145000,
+      "monthly_chart_example": 3840000
+    }
+  },
+  "quality": {
+    "source_evidence": "S01-source-truth-contract.md",
+    "ux_user_testing": "NOT_CONDUCTED",
+    "native_qa": "NOT_TESTED",
+    "visual_score": null,
+    "safe_to_spend_real_engine": "NOT_IMPLEMENTED",
+    "owner_visual_approval": false
+  }
+}
