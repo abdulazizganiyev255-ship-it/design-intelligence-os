@@ -1,0 +1,24 @@
+name: Validate Hisobchi Strategy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  strategy:
+    name: Foundation + Board + Sequential OS + Hisobchi S01
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Foundation structure
+        run: python3 tools/validate_foundation.py
+      - name: Simulated Board structure
+        run: python3 tools/validate_board_session.py
+      - name: Sequential Design OS structure
+        run: python3 tools/validate_operating_system.py
+      - name: Hisobchi S00 and S01 source-truth gates
+        run: python3 tools/validate_hisobchi_strategy.py
