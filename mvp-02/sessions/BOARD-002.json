@@ -1,0 +1,119 @@
+{
+  "session_id": "BOARD-002",
+  "date": "2026-11-23",
+  "mode": "SIMULATED_BOARD_REVIEW",
+  "artifact_kind": "CONCEPT_REVIEW",
+  "project_id": "pilot-01",
+  "source_documents": [
+    "projects/pilot-01/brief.md",
+    "projects/pilot-01/board-simulation.md",
+    "governance/board-charter.md"
+  ],
+  "evidence": [
+    {
+      "id": "E-OWNER-001",
+      "type": "OWNER_STATEMENT",
+      "source": "projects/pilot-01/brief.md",
+      "supports": "Requested design council workspace and initial workflow, not observed user behavior."
+    }
+  ],
+  "unknowns": [
+    "No real screenshots or visual mockups",
+    "No user testing or measured task completion",
+    "No demonstrated interaction/keyboard/accessibility",
+    "No confirmed engineering implementation"
+  ],
+  "roles": {
+    "ux_researcher": {
+      "basis": "HYPOTHESIS",
+      "position": "A single-decision workflow may make the next action clearer than a multi-project overview.",
+      "evidence_ids": [
+        "E-OWNER-001"
+      ],
+      "risk": "No evidence that users complete the intended task in three actions.",
+      "proposed_action": "Write a three-action task test and inspect empty/error states."
+    },
+    "creative_director": {
+      "basis": "DESIGN_JUDGMENT",
+      "position": "Prefer typography-led editorial composition that gives the decision and reason primacy.",
+      "evidence_ids": [
+        "E-OWNER-001"
+      ],
+      "risk": "A hero-led design can hide the actionable next step on small screens.",
+      "proposed_action": "Propose an editorial concept and a meaningfully different operational alternative."
+    },
+    "design_architect": {
+      "basis": "DESIGN_JUDGMENT",
+      "position": "Use adaptable components for decision/status/feedback, not fixed-height hero layouts.",
+      "evidence_ids": [
+        "E-OWNER-001"
+      ],
+      "risk": "The review rail may obscure content at 360px, and component states are unspecified.",
+      "proposed_action": "Define mobile-to-desktop stacking and empty/error/pending states."
+    },
+    "critical_reviewer": {
+      "basis": "UNKNOWN",
+      "position": "No real UI exists to validate aesthetic, responsive, or usability performance.",
+      "evidence_ids": [],
+      "risk": "Declaring S+ now would fabricate design quality.",
+      "proposed_action": "Keep UNSCORED until rendered screenshots and interactions are available."
+    }
+  },
+  "options": [
+    {
+      "id": "A",
+      "title": "Editorial Decision Canvas",
+      "structural_difference": "Primary decision-first editorial page, contextual review rail on desktop, explicit next action on mobile.",
+      "strength": "Strong rationale hierarchy with reduced visual noise.",
+      "risk": "May hide overview when multiple parallel projects grow.",
+      "estimated_effort": "Needs responsive layout proof, not yet estimated."
+    },
+    {
+      "id": "B",
+      "title": "Mission Control Workspace",
+      "structural_difference": "Status-first board and filtering, parallel project list, persistent activity queue.",
+      "strength": "Parallel-project oversight and operational scanning.",
+      "risk": "High initial cognitive load and generic admin-panel presentation.",
+      "estimated_effort": "More complex status and filter states; not estimated."
+    }
+  ],
+  "objections": [
+    {
+      "from": "ux_researcher",
+      "to": "creative_director",
+      "issue": "Editorial hero could displace the immediate next action on a small screen.",
+      "response": "Keep next action and current decision in the first viewport and verify on 360px.",
+      "resolved": false
+    },
+    {
+      "from": "critical_reviewer",
+      "to": "design_architect",
+      "issue": "Responsive and keyboard claims are hypotheses because no prototype exists.",
+      "response": "Create a viewport/state matrix and hold all QA claims until real tests.",
+      "resolved": true
+    }
+  ],
+  "dissent": [
+    "UX Researcher: no basis to claim decision-first layout is faster; retains the three-action hypothesis pending observation."
+  ],
+  "decision": {
+    "status": "ACCEPTED_FOR_PROTOTYPE",
+    "scope": "PROTOTYPE_ONLY",
+    "proposal": "Recommend Option A as a reversible prototype direction; do not approve release.",
+    "rationale": "It directly prioritizes decision, justification and next action from the first pilot brief, while B remains a later multi-project candidate.",
+    "owner_approved": false
+  },
+  "quality": {
+    "score_status": "UNSCORED",
+    "total_score": null,
+    "open_p0_p1": [],
+    "acceptance_test": "NOT_TESTED"
+  },
+  "validation_plan": [
+    "Render 360px, 390px and 1440px visual targets for Option A with real content.",
+    "Verify the active brief and next action can be found in at most three actions.",
+    "Test keyboard focus order, error/empty/pending states and meaningful contrast.",
+    "Ask Owner to compare real A/B visuals before confirming the aesthetic direction."
+  ],
+  "learning_state": "REVIEW_PENDING"
+}
