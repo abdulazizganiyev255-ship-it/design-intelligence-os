@@ -19,8 +19,8 @@ The **current project state** is stored in `../hisobchi-ai.json`. `S01-decision-
 2. `S01-source-truth-contract.md` — authoritative **demo/session** arithmetic and clear UI labels.
 3. `S01-product-strategy.md` — two distinct user jobs and recommended first slice.
 4. `S01-board-review.md` — 4 simulated perspectives, conflicts, open risks.
-5. `S01-decision-proposal.json` — machine-readable unapproved decision and test fixture.
-6. `S02-IA-provisional.md` — **only** a candidate, NOT a finished S02.
+5. `S01-decision-proposal.json` — machine-readable Owner-approved first-MVP decision; **not a visual or release approval**.
+6. `S02-IA-provisional.md` — earlier historical sketch; see `S02-screen-map.md`, `S02-task-flows.md`, `S02-navigation.json`, `S02-state-matrix.csv`, `S02-board-review.md` and `S02-acceptance-checks.md` for active S02 work.
 
 ## Owner decision
 
