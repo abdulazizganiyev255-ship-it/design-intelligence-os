@@ -1,6 +1,6 @@
 # Hisobchi AI — S02 official screen map v0.1
 
-**Gate:** S02 `IN_PROGRESS`. **Owner-approved primary job:** `A_RECORD_EXPENSE`. **Source of truth:** `S00-S01-owner-decisions.md` and `S01-source-truth-contract.md`.  
+**Gate:** S02 `PASSED` for specification only (see `S02-final-gate.md`); original source implementation/native QA not approved. **Owner-approved primary job:** `A_RECORD_EXPENSE`. **Source of truth:** `S00-S01-owner-decisions.md` and `S01-source-truth-contract.md`.  
 **Stage:** Information Architecture ONLY — **no colors, typefaces, component skin, finished wireframe, actual app change or final S02 approval**.
 
 ## Primary question
