@@ -1,0 +1,32 @@
+id,screen,state,required_observable,recovery_or_next,data_truth,check_id
+ST-001,HOME,DEMO,session totals explicitly tagged; main expense action available,render,DEMO / Sessiya; no live bank balance,S02-TRUST
+ST-002,HOME,empty,no recorded transactions; call to add remains,show empty guidance,do not show fabricated current safe allowance,S02-EMPTY
+ST-003,HOME,after-add,session recent entry reflects save,navigate HISTORY on save,fixed sample chart/balance unchanged,S02-FIN
+ST-004,EDITOR_NEW,initial,kind expense; fields visible; empty amount,fill or cancel,draft is not persisted before save,S02-FLOW
+ST-005,EDITOR_NEW,invalid-amount,0/letters/negative/fraction/out-of-range rejected,focus amount and correct,no mutation/no false success,S02-VALID
+ST-006,EDITOR_NEW,invalid-category,unknown category rejected,choose supported category,preserve existing amount/date,S02-VALID
+ST-007,EDITOR_NEW,invalid-date,invalid ISO date or future date rejected,choose valid past/today,no mutation/no fabricated date,S02-VALID
+ST-008,EDITOR_NEW,saving-valid,valid 100000 expense is saved locally,return HISTORY,new record negative; local session only,S02-FIN
+ST-009,EDITOR_NEW,cancel,cancel new entry restores origin tab,back without mutation,no persisted draft,S02-RECOVERY
+ST-010,EDITOR_EDIT,existing,current signed amount/category/date shown,edit or cancel,underlying item unchanged until save,S02-EDIT
+ST-011,EDITOR_EDIT,save-updated,valid edit updates correct ID,return HISTORY,recompute session aggregates,S02-EDIT
+ST-012,EDITOR_EDIT,cancel,draft edits discarded,return HISTORY,no mutation,S02-EDIT
+ST-013,DATE_PICKER,open,current day selected; future disabled,choose date,inclusive local date rule,S02-DATE
+ST-014,DATE_PICKER,cancel,existing draft date remains,close modal,no data mutation,S02-DATE
+ST-015,DELETE_CONFIRM,open,specific row and destructive consequence shown,confirm or cancel,do not auto-delete,S02-DELETE
+ST-016,DELETE_CONFIRM,cancel,dialog closes to edit,return EDITOR_EDIT,no mutation,S02-DELETE
+ST-017,DELETE_CONFIRM,confirmed,exact selected row removed once,return HISTORY,analytics recomputed from session,S02-DELETE
+ST-018,HISTORY,populated,"rows, signed amounts and dates visible",select for edit,totals reflect visible filtered rows,S02-HISTORY
+ST-019,HISTORY,no-search-results,search returns no matching records,clear query / filters,not same as zero transactions,S02-HISTORY
+ST-020,HISTORY,filtered,type/period/custom selection active,clear or change filters,sum corresponds to visible rows,S02-FILTER
+ST-021,HISTORY,custom-range-invalid,"start>end, bad ISO or future date",correct range,no false application,S02-FILTER
+ST-022,ANALYTICS,session-all,period aggregates derived from signed rows,open period or history,net not bank balance,S02-FIN
+ST-023,ANALYTICS,no-income,zero income for range,"show zero, not fake trend",do not draw fabricated forecast,S02-EMPTY
+ST-024,ANALYTICS,negative-net,income < expense within period,display negative explicitly,no misleading positive style,S02-FIN
+ST-025,ANALYTICS,chart-truncated,at most last seven recorded days displayed,show coverage explanation,KPI covers complete selected period,S02-TRUST
+ST-026,PROFILE,demo-status,local sample mode clear,view guide or reset,no account sync claim,S02-TRUST
+ST-027,RESET_CONFIRM,cancel,no records changed,close dialog,no mutation,S02-RECOVERY
+ST-028,RESET_CONFIRM,confirmed,restore seed session items,close dialog,does not alter live accounts (none linked),S02-RECOVERY
+ST-029,NAVIGATION,editor-open,tab bar absent while editor active,back/cancel,preserve originating tab for cancel,S02-NAV
+ST-030,NAVIGATION,native-back,dismiss modal before editor; editor before tab,Android Back handling,native gestures/focus require runtime QA,S02-A11Y
+ST-031,GLOBAL,accessibility-large-text,"labels, amounts, CTA must not clip",reflow/scroll,native 200% text NOT_TESTED,S02-A11Y
