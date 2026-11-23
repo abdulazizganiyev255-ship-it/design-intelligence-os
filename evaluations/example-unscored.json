@@ -1,0 +1,55 @@
+{
+  "audit_id": "AUD-PENDING-001",
+  "review_mode": "SIMULATED_BOARD_REVIEW",
+  "status": "UNSCORED",
+  "criteria": {
+    "V": {
+      "rating": null,
+      "evidence_ids": [],
+      "rationale": "Dalil kiritilmagan; baho berilmaydi."
+    },
+    "U": {
+      "rating": null,
+      "evidence_ids": [],
+      "rationale": "Dalil kiritilmagan; baho berilmaydi."
+    },
+    "T": {
+      "rating": null,
+      "evidence_ids": [],
+      "rationale": "Dalil kiritilmagan; baho berilmaydi."
+    },
+    "D": {
+      "rating": null,
+      "evidence_ids": [],
+      "rationale": "Dalil kiritilmagan; baho berilmaydi."
+    },
+    "A": {
+      "rating": null,
+      "evidence_ids": [],
+      "rationale": "Dalil kiritilmagan; baho berilmaydi."
+    },
+    "I": {
+      "rating": null,
+      "evidence_ids": [],
+      "rationale": "Dalil kiritilmagan; baho berilmaydi."
+    },
+    "F": {
+      "rating": null,
+      "evidence_ids": [],
+      "rationale": "Dalil kiritilmagan; baho berilmaydi."
+    }
+  },
+  "open_issues": [],
+  "acceptance_test": {
+    "status": "NOT_TESTED",
+    "evidence_ids": []
+  },
+  "owner_approved": false,
+  "total_score": null,
+  "not_tested": [
+    "Oldingi real dizayn screenshotlari",
+    "Interaktiv testlar",
+    "Qurilma va keyboard tekshiruvlari"
+  ],
+  "review_notes": "Bu placeholder. Hech qanday real audit bajarilgani bildirilmaydi."
+}
