@@ -1,6 +1,5 @@
 {
   "$description": "Illustrative design-token sample only; NOT an approved Hisobchi AI palette or production design system.",
-  "status": "EXAMPLE_NOT_APPROVED",
   "color": {
     "surface-base": {
       "$type": "color",
@@ -40,6 +39,12 @@
         "value": 12,
         "unit": "px"
       }
+    }
+  },
+  "$extensions": {
+    "design-intelligence-os": {
+      "status": "EXAMPLE_NOT_APPROVED",
+      "usage": "Documentation-only; must not be installed as brand palette."
     }
   }
 }
