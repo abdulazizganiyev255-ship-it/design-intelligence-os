@@ -1,0 +1,22 @@
+name: Validate Sequential Design OS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Stages + Skills + Sources + Components
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate Foundation
+        run: python3 tools/validate_foundation.py
+      - name: Validate Board Sessions
+        run: python3 tools/validate_board_session.py
+      - name: Validate Sequential Design OS
+        run: python3 tools/validate_operating_system.py

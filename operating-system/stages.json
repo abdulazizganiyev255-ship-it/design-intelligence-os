@@ -1,0 +1,420 @@
+{
+  "version": "0.3.0",
+  "mode": "CHATGPT_SIMULATED_BOARD",
+  "status": "PROPOSED",
+  "stage_count": 13,
+  "stages": [
+    {
+      "id": "S00",
+      "name": "Intake and evidence baseline",
+      "depends_on": [],
+      "lead": "critical-reviewer",
+      "skills": [
+        "ux-critique"
+      ],
+      "inputs": [
+        "owner_goal",
+        "existing_artifacts_or_unknowns"
+      ],
+      "outputs": [
+        "evidence_inventory",
+        "baseline_limitations",
+        "preserve_and_reject"
+      ],
+      "gate": "Every stated observation points to evidence; missing screenshot => UNSCORED; Owner clarifies scope",
+      "owner_gate": true,
+      "order": 0,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S01",
+      "name": "User, job and product strategy",
+      "depends_on": [
+        "S00"
+      ],
+      "lead": "ux-researcher",
+      "skills": [
+        "design-brief",
+        "ux-psychology"
+      ],
+      "inputs": [
+        "baseline",
+        "user_segment",
+        "business_goal"
+      ],
+      "outputs": [
+        "approved_brief",
+        "top_task",
+        "success_metrics",
+        "hypotheses"
+      ],
+      "gate": "Single top task and success metric; evidence separated from assumptions; Owner confirms goal",
+      "owner_gate": true,
+      "order": 1,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S02",
+      "name": "Information architecture and task flows",
+      "depends_on": [
+        "S01"
+      ],
+      "lead": "ux-researcher",
+      "skills": [
+        "information-architecture",
+        "ux-psychology"
+      ],
+      "inputs": [
+        "approved_brief"
+      ],
+      "outputs": [
+        "screen_map",
+        "navigation_map",
+        "happy_and_failure_flows",
+        "state_inventory"
+      ],
+      "gate": "Every screen supports task; error/back/empty covered; Board approves topology",
+      "owner_gate": false,
+      "order": 2,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S03",
+      "name": "Low-fidelity wireframes and content truth",
+      "depends_on": [
+        "S02"
+      ],
+      "lead": "ux-researcher",
+      "skills": [
+        "wireframing",
+        "layout-composition"
+      ],
+      "inputs": [
+        "flows",
+        "real_content_samples"
+      ],
+      "outputs": [
+        "wireframes",
+        "content_hierarchy",
+        "decision_hierarchy"
+      ],
+      "gate": "CTA and key content clear without color; two review cycles max without new evidence",
+      "owner_gate": false,
+      "order": 3,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S04",
+      "name": "Creative concepts and taste evaluation",
+      "depends_on": [
+        "S03"
+      ],
+      "lead": "creative-director",
+      "skills": [
+        "reference-teardown",
+        "art-direction",
+        "taste-critique"
+      ],
+      "inputs": [
+        "approved_wireframes",
+        "reference_cards"
+      ],
+      "outputs": [
+        "two_different_visual_directions",
+        "comparison",
+        "selected_visual_target_or_reject_both"
+      ],
+      "gate": "Two structurally different visual targets reviewed; anti-generic rubric, Owner selects or rejects",
+      "owner_gate": true,
+      "order": 4,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S05",
+      "name": "Design foundations and semantic tokens",
+      "depends_on": [
+        "S04"
+      ],
+      "lead": "design-architect",
+      "skills": [
+        "typography-system",
+        "color-system",
+        "layout-composition",
+        "design-tokens"
+      ],
+      "inputs": [
+        "selected_visual_target",
+        "brand_rules",
+        "platforms"
+      ],
+      "outputs": [
+        "type_scale",
+        "semantic_colors",
+        "spacing_grid",
+        "elevation_motion_tokens"
+      ],
+      "gate": "No arbitrary values; contrast targets, theme/state mappings and responsive rules documented",
+      "owner_gate": false,
+      "order": 5,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S06",
+      "name": "Primitive and composite components",
+      "depends_on": [
+        "S05"
+      ],
+      "lead": "design-architect",
+      "skills": [
+        "component-contract",
+        "accessibility-qa"
+      ],
+      "inputs": [
+        "tokens",
+        "flow_state_inventory"
+      ],
+      "outputs": [
+        "component_specs",
+        "variants",
+        "states",
+        "component_examples"
+      ],
+      "gate": "All used controls have semantics, interaction rules, focus/error/disabled/loading and touch targets",
+      "owner_gate": false,
+      "order": 6,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S07",
+      "name": "Screen assembly and visual QA",
+      "depends_on": [
+        "S06"
+      ],
+      "lead": "creative-director",
+      "skills": [
+        "layout-composition",
+        "taste-critique",
+        "visual-regression"
+      ],
+      "inputs": [
+        "screen_map",
+        "design_system_components"
+      ],
+      "outputs": [
+        "complete_screen_designs",
+        "screenshots_at_breakpoints",
+        "visual_findings"
+      ],
+      "gate": "Visual target met; real content; no clipping at defined sizes; Owner visual checkpoint",
+      "owner_gate": true,
+      "order": 7,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S08",
+      "name": "Interactive prototype and task tests",
+      "depends_on": [
+        "S07"
+      ],
+      "lead": "ux-researcher",
+      "skills": [
+        "interaction-motion",
+        "accessibility-qa"
+      ],
+      "inputs": [
+        "screen_designs",
+        "acceptance_scenarios"
+      ],
+      "outputs": [
+        "interaction_prototype",
+        "task_results",
+        "state_coverage"
+      ],
+      "gate": "Critical user task actually exercised; no fake controls; failures logged",
+      "owner_gate": false,
+      "order": 8,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S09",
+      "name": "Frontend implementation and regression",
+      "depends_on": [
+        "S08"
+      ],
+      "lead": "design-architect",
+      "skills": [
+        "frontend-implementation",
+        "component-contract"
+      ],
+      "inputs": [
+        "approved_visual",
+        "prototype",
+        "source_code"
+      ],
+      "outputs": [
+        "implementation_branch",
+        "code_review",
+        "functional_tests"
+      ],
+      "gate": "Same source truth, native/web tests as applicable; no production main overwrite or backend changes without explicit scope",
+      "owner_gate": false,
+      "order": 9,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S10",
+      "name": "Cross-functional acceptance QA",
+      "depends_on": [
+        "S09"
+      ],
+      "lead": "critical-reviewer",
+      "skills": [
+        "visual-regression",
+        "ux-critique",
+        "accessibility-qa"
+      ],
+      "inputs": [
+        "actual_render",
+        "source",
+        "acceptance_log"
+      ],
+      "outputs": [
+        "scorecard",
+        "severity_triage",
+        "retest_log"
+      ],
+      "gate": "No P0/P1; observed acceptance PASS; evidence for all rated criteria; missing => UNSCORED",
+      "owner_gate": false,
+      "order": 10,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S11",
+      "name": "Owner signoff and release decision",
+      "depends_on": [
+        "S10"
+      ],
+      "lead": "critical-reviewer",
+      "skills": [
+        "ux-critique"
+      ],
+      "inputs": [
+        "qa_report",
+        "risk_register",
+        "release_diff"
+      ],
+      "outputs": [
+        "release_decision",
+        "rollback_plan",
+        "approved_scope"
+      ],
+      "gate": "Owner explicitly signs off; S+ only if original 100-point gates and external human review; otherwise no S+ claim",
+      "owner_gate": true,
+      "order": 11,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    },
+    {
+      "id": "S12",
+      "name": "Retrospective and curated knowledge",
+      "depends_on": [
+        "S11"
+      ],
+      "lead": "ux-researcher",
+      "skills": [
+        "knowledge-curation"
+      ],
+      "inputs": [
+        "decisions",
+        "retest_results",
+        "owner_feedback"
+      ],
+      "outputs": [
+        "validated_patterns",
+        "failure_cases",
+        "retrieval_test_cases"
+      ],
+      "gate": "Only verified context-bounded lessons promoted; unverified candidates REVIEW_PENDING; vector RAG is optional later",
+      "owner_gate": false,
+      "order": 12,
+      "board_review": [
+        "ux-researcher",
+        "creative-director",
+        "design-architect",
+        "critical-reviewer"
+      ],
+      "review_required": true
+    }
+  ]
+}

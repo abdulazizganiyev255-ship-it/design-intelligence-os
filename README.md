@@ -110,3 +110,12 @@ design-intelligence-os/
 ## Manbalar
 
 `/sources/references.md`ga qarang: W3C WCAG 2.2, Nielsen Norman Group, Agent Skills specification, GitHub documentation.
+
+
+## Proposed next version — Sequential Design OS v0.3
+
+The feature branch `feat/v03-sequential-design-operating-system` proposes a dependency-ordered design process with 13 Board-reviewed stages, 14 additional skill contracts, 30 component/pattern inventory entries and a curated 21-source research registry. **This version is not automatically active until its PR is reviewed and merged.**
+
+Read `operating-system/README.md` → `operating-system/stages.json` → `operating-system/board-stage-contract.md` → `design-system/README.md` → `knowledge/upstream-audits.md`.
+
+The v0.3 validator (`python3 tools/validate_operating_system.py`) checks structure and gates **only**. It does not certify aesthetics, run real agent-to-agent conversations, install RAG, or validate an app release. All future visual choices require explicit Owner review.
