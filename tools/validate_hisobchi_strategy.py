@@ -50,10 +50,11 @@ def stage_and_source(p: dict, project: dict, stages: dict) -> None:
     statuses = project.get("stage_status", {})
     require(p.get("stage_S00") == statuses.get("S00") == "PASSED", "S00 scoped gate not passed")
     require(p.get("stage_S01") == statuses.get("S01") == "PASSED", "S01 first-job gate not passed")
-    require(p.get("stage_S02") == statuses.get("S02") == "IN_PROGRESS", "S02 must remain in-progress")
-    require(project.get("workflow_stage") == "S02", "Wrong current stage")
-    require(all(statuses.get(f"S{i:02}") == "NOT_STARTED" for i in range(3, 13)),
-            "Cannot skip S02 and start S03–S12")
+    require(p.get("stage_S02") == statuses.get("S02") == "PASSED", "S02 spec gate not passed")
+    require(p.get("stage_S03") == statuses.get("S03") == "IN_PROGRESS", "S03 must be in-progress")
+    require(project.get("workflow_stage") == "S03", "Wrong current stage")
+    require(all(statuses.get(f"S{i:02}") == "NOT_STARTED" for i in range(4, 13)),
+            "Cannot skip S03 and start S04–S12")
     require(stages.get("stage_count") == 13, "Unexpected sequential design OS")
     require(stages["stages"][1]["depends_on"] == ["S00"], "S01 dependency missing")
     require(stages["stages"][2]["depends_on"] == ["S01"], "S02 dependency missing")
@@ -94,6 +95,12 @@ def stage_and_source(p: dict, project: dict, stages: dict) -> None:
     require(t.get("fixed_sample_safe_to_spend") == 145_000, "Demo allowance altered")
     require(t.get("fixed_sample_monthly_expense") == 3_840_000, "Demo month graph altered")
 
+    for name in ("S03-lowfi-wireframes.md", "S03-board-review.md", "S03-gate-checklist.md"):
+        target = BASE / name
+        require(target.is_file() and target.read_text(encoding="utf-8").strip(), f"Missing S03 deliverable: {name}")
+    require("IN_PROGRESS" in (BASE / "S03-board-review.md").read_text(encoding="utf-8"),
+            "S03 review must remain in progress")
+
     quality = p.get("quality", {})
     require(quality.get("visual_total_score") is None, "No complete design score")
     require(quality.get("user_study_status") == "NOT_CONDUCTED", "No measured user study")
@@ -106,7 +113,11 @@ def stage_and_source(p: dict, project: dict, stages: dict) -> None:
 def check_graph(g: dict) -> None:
     require(g.get("project_id") == "hisobchi-ai" and g.get("stage") == "S02",
             "Wrong IA graph")
-    require(g.get("stage_status") == "IN_PROGRESS", "S02 is not approved yet")
+    require(g.get("stage_status") == "PASSED", "S02 spec gate must pass before S03")
+    require(g.get("board_spec_gate_passed") is True, "No Board spec pass record")
+    require(g.get("owner_navigation_approved") is False, "Owner has not separately approved exact topology")
+    require(bool(g.get("board_gate_evidence")) and (ROOT / g["board_gate_evidence"]).is_file(),
+            "Board evidence missing")
     require(g.get("owner_job") == "A_RECORD_EXPENSE", "Graph ignores Owner job")
     require(g.get("board_mode") == "SIMULATED_BOARD_REVIEW", "Incorrect board mode")
     require(g.get("navigation_approved") is False and g.get("production_ready") is False,
@@ -213,7 +224,8 @@ def check_matrix() -> int:
 def negative_tests(p: dict, project: dict, stages: dict, g: dict) -> None:
     cases = [
         ("fake_owner", lambda v: v.update(owner_approved=False), "proposal"),
-        ("skip_s02", lambda v: v.update(stage_S02="PASSED"), "proposal"),
+        ("skip_s02", lambda v: v.update(stage_S02="NOT_STARTED"), "proposal"),
+        ("skip_s03", lambda v: v.update(stage_S03="PASSED"), "proposal"),
         ("fake_study", lambda v: v["target_user_segment"].update(status="FACT"), "proposal"),
         ("live_safe_spend", lambda v: v["north_star_job"].update(ready_for_live_claim=True), "proposal"),
         ("wrong_net", lambda v: v["demo_truth"].update(net_after=100), "proposal"),
@@ -249,9 +261,9 @@ def main() -> None:
     check_graph(graph)
     rows = check_matrix()
     negative_tests(p, project, stages, graph)
-    print("PASS: scoped S00/S01 Owner approvals, S02 in-progress dependency integrity.")
+    print("PASS: scoped S00/S01 Owner approvals, S02 spec pass and S03 in-progress dependency integrity.")
     print(f"PASS: {len(graph['screens'])} screens, {len(graph['transitions'])} routes, {rows} state checks.")
-    print("PASS: finance arithmetic/provenance and 9 deliberately invalid fixtures rejected.")
+    print("PASS: finance arithmetic/provenance and 10 deliberately invalid fixtures rejected.")
     print("NOT VERIFIED: real mobile UI, native QA, user studies, visual S+ or real Safe-to-Spend.")
 
 
