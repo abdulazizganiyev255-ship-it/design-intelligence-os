@@ -105,13 +105,13 @@
 │                                  │
 │ 5 ta yozuv              Tozalash │  Tozalash shown only with filters
 │ -------------------------------- │
-│ 23-noyabr                       │
+│ 22-noyabr                       │
 │ Oziq-ovqat        −85 000 so‘m   │
 │ Transport         −12 000 so‘m   │
 │ -------------------------------- │
-│ 22-noyabr                       │
+│ 21-noyabr                       │
 │ Kafe              −42 000 so‘m   │
-│ Salomatlik       −120 000 so‘m   │
+│ (19-noy: Salomatlik −120 000)   │
 │                                  │
 │ [ Ko‘rinayotgan yozuvlar jami ]  │
 │ Kirim 3 000 000 | Chiqim 259 000│  filtered-scope label required
