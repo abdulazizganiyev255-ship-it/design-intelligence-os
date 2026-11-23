@@ -1,0 +1,67 @@
+{
+  "version": "0.1.0",
+  "project_id": "hisobchi-ai",
+  "mode": "SIMULATED_BOARD_REVIEW",
+  "source_repo": "abdulazizganiyev255-ship-it/hisobchi-ai-mobile",
+  "source_branch": "design/splus-living-ledger-analytics-v03",
+  "source_review_date": "2026-11-23",
+  "stage_S00": "NEEDS_EVIDENCE",
+  "stage_S01": "NOT_STARTED",
+  "stage_S02": "NOT_STARTED",
+  "decision_status": "NEEDS_OWNER_DECISION",
+  "owner_approved": false,
+  "target_user_segment": {
+    "status": "HYPOTHESIS",
+    "description": "Uzbek-speaking mobile user who tracks personal spending",
+    "user_research_evidence": []
+  },
+  "first_mvp_job": {
+    "id": "A_RECORD_EXPENSE",
+    "status": "RECOMMENDATION_ONLY",
+    "primary_task": "Add a new expense and verify session totals correctly change",
+    "owner_selected": false
+  },
+  "north_star_job": {
+    "id": "B_SAFE_TO_SPEND",
+    "status": "NOT_IMPLEMENTED",
+    "ready_for_live_claim": false,
+    "requirements": [
+      "verified_balance",
+      "committed_obligations",
+      "deterministic_finance_rules",
+      "authenticated_persistence",
+      "validation_and_reconciliation"
+    ]
+  },
+  "demo_truth": {
+    "currency": "UZS",
+    "record_count_before": 5,
+    "record_count_after": 6,
+    "income_before": 3000000,
+    "expense_before": 259000,
+    "net_before": 2741000,
+    "turnover_before": 3259000,
+    "example_added_expense": 100000,
+    "income_after": 3000000,
+    "expense_after": 359000,
+    "net_after": 2641000,
+    "turnover_after": 3359000,
+    "fixed_sample_balance": 12850000,
+    "fixed_sample_safe_to_spend": 145000,
+    "fixed_sample_monthly_expense": 3840000,
+    "source": "src/data/demo.ts + src/data/transactions.ts + src/data/periods.ts + src/data/analytics.ts + App.tsx"
+  },
+  "quality": {
+    "visual_total_score": null,
+    "user_study_status": "NOT_CONDUCTED",
+    "native_accessibility_status": "NOT_TESTED",
+    "ui_release_status": "NOT_APPROVED"
+  },
+  "artifacts": {
+    "S00": "operating-system/projects/hisobchi-ai/S00-evidence-and-gate.md",
+    "S01_brief": "operating-system/projects/hisobchi-ai/S01-product-strategy.md",
+    "S01_truth": "operating-system/projects/hisobchi-ai/S01-source-truth-contract.md",
+    "S01_board": "operating-system/projects/hisobchi-ai/S01-board-review.md",
+    "S02_provisional": "operating-system/projects/hisobchi-ai/S02-IA-provisional.md"
+  }
+}
