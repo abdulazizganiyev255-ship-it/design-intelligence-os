@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "project_id": "hisobchi-ai",
   "stage": "S02",
-  "stage_status": "IN_PROGRESS",
+  "stage_status": "PASSED",
   "owner_job": "A_RECORD_EXPENSE",
   "owner_job_approval_record": "operating-system/projects/hisobchi-ai/S00-S01-owner-decisions.md",
   "board_mode": "SIMULATED_BOARD_REVIEW",
@@ -398,5 +398,8 @@
     "visual_score": null,
     "safe_to_spend_real_engine": "NOT_IMPLEMENTED",
     "owner_visual_approval": false
-  }
+  },
+  "board_spec_gate_passed": true,
+  "board_gate_evidence": "operating-system/projects/hisobchi-ai/S02-final-gate.md",
+  "owner_navigation_approved": false
 }
