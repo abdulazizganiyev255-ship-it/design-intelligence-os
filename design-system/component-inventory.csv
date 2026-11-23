@@ -1,0 +1,31 @@
+id,component,level,stage,depends_on,required_states,ux_risk,owner_approval
+CMP-001,Type Text,primitive,S06,S05,default/long/scaled,truncation,S04-visual-only
+CMP-002,Button,primitive,S06,S05,default/pressed/focus/disabled/loading,double-submit,S04-visual-only
+CMP-003,Icon Button,primitive,S06,CMP-002,default/focus/disabled,missing-label,S04-visual-only
+CMP-004,Text Field,primitive,S06,S05,default/focus/error/disabled/filled,invalid-input,S04-visual-only
+CMP-005,Currency Input,composite,S06,CMP-004,default/invalid/pending,amount-format,S04-visual-only
+CMP-006,Surface,primitive,S06,S05,default/raised,card-overuse,S04-visual-only
+CMP-007,Divider,primitive,S06,S05,default,visual-noise,S04-visual-only
+CMP-008,Semantic Badge,primitive,S06,S05,default/pending/success/error,color-only-meaning,S04-visual-only
+CMP-009,Empty State,composite,S06,CMP-001,empty/actionable,misleading-empty,S04-visual-only
+CMP-010,Loading & Skeleton,composite,S06,CMP-006,loading/slow/error,fake-progress,S04-visual-only
+CMP-011,Feedback Notice,composite,S06,CMP-008,info/success/error,unclear-recovery,S04-visual-only
+CMP-012,Inline Validation,composite,S06,CMP-004,valid/invalid,unreadable-error,S04-visual-only
+CMP-013,Segmented Control,composite,S06,CMP-002,selected/focus/disabled,hidden-choice,S04-visual-only
+CMP-014,Checkbox & Radio,composite,S06,CMP-002,selected/focus/disabled,ambiguous-state,S04-visual-only
+CMP-015,Search Field,composite,S06,CMP-004,default/results/no-results/cleared,empty-results,S04-visual-only
+CMP-016,Period Selector,composite,S06,CMP-013,default/custom/pending,incorrect-range,S04-visual-only
+CMP-017,Date Picker,composite,S06,CMP-016,opened/selected/disabled/cancel,invalid-date,S04-visual-only
+CMP-018,Bottom Tabs,composite,S06,CMP-003,selected/focus/disabled,unreachable-tab,S04-visual-only
+CMP-019,Top Bar & Back,composite,S06,CMP-003,default/back/disabled,no-way-back,S04-visual-only
+CMP-020,Sheet or Dialog,composite,S06,CMP-002,open/closed/error/confirm,focus-loss,S04-visual-only
+CMP-021,Transaction Row,composite,S06,CMP-001,default/selected/edited,sign-or-provenance,S04-visual-only
+CMP-022,Transaction List,composite,S06,CMP-021,loading/empty/error/normal,overflow,S04-visual-only
+CMP-023,Money Summary,composite,S06,CMP-001,session/demo/unknown,live-vs-demo,S04-visual-only
+CMP-024,Data Chart,composite,S06,CMP-023,empty/selected/updated/negative,misleading-chart,S04-visual-only
+CMP-025,Category Selector,composite,S06,CMP-014,selected/search/empty,too-many-choices,S04-visual-only
+CMP-026,Transaction Editor,pattern,S07,CMP-005/CMP-017/CMP-025,error/pending/success/cancel,failed-save,S07-owner
+CMP-027,Home Decision Surface,pattern,S07,CMP-023/CMP-021,normal/empty/demo,task-priority,S07-owner
+CMP-028,Cashflow Timeline,pattern,S07,CMP-021/CMP-023,empty/dated/unknown-future,fake-future,S07-owner
+CMP-029,Analytics Screen,pattern,S07,CMP-024/CMP-016,empty/filtered/negative,unreadable-report,S07-owner
+CMP-030,Profile and Settings,pattern,S07,CMP-019/CMP-014,loading/disabled/error,false-settings,S07-owner
