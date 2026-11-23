@@ -31,6 +31,6 @@ These are stage-readiness opinions, not the final 100-point design quality score
 
 ## Proposed resolution / gate
 
-**Reconciled with Owner's explicit decision:** `S01=PASSED` (first-MVP task only), `S02=IN_PROGRESS`. Previous recommendation was not an approval at the time; it was later approved by Owner. See `S00-S01-owner-decisions.md`. Recommend A for initial design/QA proof, but Owner may choose otherwise. **No S02 PASS, no S03 wireframe lock, no S04 creative selection.**
+**Reconciled with Owner's explicit decision:** `S01=PASSED` (first-MVP task only), `S02=IN_PROGRESS`. The recommendation above was not an approval when written; Owner later approved A explicitly. See `S00-S01-owner-decisions.md`. **No S02 PASS, S03 wireframe lock or S04 creative selection is implied.**
 
-**Next observable action after Owner approval:** conduct S02 IA review, record navigation/failed-state coverage and evaluate evidence. Audience remains a hypothesis. No fake numeric quality score. Preserve existing finance data contracts. No fake numeric quality score.
+**Next observable action after Owner approval:** conduct S02 IA review, record navigation/failed-state coverage and evaluate evidence. Audience remains a hypothesis; finance data contracts stay unchanged; no numeric quality score is claimed.
