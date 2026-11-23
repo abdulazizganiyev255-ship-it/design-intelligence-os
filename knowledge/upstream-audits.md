@@ -72,4 +72,4 @@ References:
 
 ## Audit completion scope
 
-21 links catalogued; 19 source pages/docs looked up and classified to the extent indicated by `review_status`; two additional architecture watchlist entries remain link-only pending deep review. No full source-code review, commit pin, per-version licensing audit, package install, security scan or compatibility test was performed in this phase. **Do not move any CANDIDATE_TOOL into production without those checks.**
+21 links catalogued and assigned fit classes. A subset had upstream README/docs or skill instructions directly inspected (including DTCG, taste-skill, Primer, React Spectrum, Carbon, Radix, Style Dictionary, Storybook, Playwright, axe-core, Expo, Restyle and pgvector); the remaining entries were located via search/listing and require deeper review before adoption. Two additional architecture watchlist entries remain link-only pending deep review. No full source-code review, commit pin, per-version licensing audit, package install, security scan or compatibility test was performed in this phase. **Do not move any CANDIDATE_TOOL into production without those checks.**
