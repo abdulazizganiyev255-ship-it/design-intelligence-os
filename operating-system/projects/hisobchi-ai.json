@@ -7,11 +7,11 @@
   "visual_target_approved": false,
   "production_release_approved": false,
   "visual_score": null,
-  "workflow_stage": "S00",
+  "workflow_stage": "S02",
   "stage_status": {
-    "S00": "NEEDS_EVIDENCE",
-    "S01": "NOT_STARTED",
-    "S02": "NOT_STARTED",
+    "S00": "PASSED",
+    "S01": "PASSED",
+    "S02": "IN_PROGRESS",
     "S03": "NOT_STARTED",
     "S04": "NOT_STARTED",
     "S05": "NOT_STARTED",
@@ -23,11 +23,12 @@
     "S11": "NOT_STARTED",
     "S12": "NOT_STARTED"
   },
-  "reason": "Partial web screenshot and source-backed baseline ready, owner rejected previous visual direction. Required S00 scope/owner decision for the primary S01 task remains pending. S01 strategy and S02 IA files are PROVISIONAL drafts, not passed gates.",
+  "reason": "Owner approved A_RECORD_EXPENSE as first MVP task on 2026-11-23. S00 pass limited to source-based demo scope, S01 pass limited to first job; target-user research still a hypothesis. S02 formal IA work opened, not yet passed.",
   "next_actions": [
-    "Owner selects the single top user job: expense capture (testable now), live Safe-to-Spend (requires finance engine), or other",
-    "Record explicit S00 closure scope and S01 Owner approval if appropriate",
-    "Only then open S02 information architecture review; do not freeze type/color/tokens before S04"
+    "Complete S02 screen map, routes, failure/recovery flows and state matrix",
+    "Run four-role simulated Board gate with dissent and evidence",
+    "Validate S02 structure before S03 wireframes; no approved visual target"
   ],
-  "provisional_strategy_proposal": "operating-system/projects/hisobchi-ai/S01-decision-proposal.json"
+  "provisional_strategy_proposal": "operating-system/projects/hisobchi-ai/S01-decision-proposal.json",
+  "owner_decision_record": "operating-system/projects/hisobchi-ai/S00-S01-owner-decisions.md"
 }
