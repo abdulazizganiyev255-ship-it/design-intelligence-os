@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   strategy:
-    name: Foundation + Board + Sequential OS + Hisobchi S02
+    name: Foundation + Board + Sequential OS + Hisobchi S03
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -20,5 +20,5 @@ jobs:
         run: python3 tools/validate_board_session.py
       - name: Sequential Design OS structure
         run: python3 tools/validate_operating_system.py
-      - name: Hisobchi S00/S01 approvals and S02 navigation + finance gates
+      - name: Hisobchi S00/S01 approvals, S02 spec gate, S03 drafts and finance checks
         run: python3 tools/validate_hisobchi_strategy.py
