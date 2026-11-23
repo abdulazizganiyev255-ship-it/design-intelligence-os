@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-23  
 **Stage:** S00 — Intake / baseline  
-**Status:** `NEEDS_EVIDENCE` (not PASSED)  
+**Status:** `PASSED` for source-based first-MVP baseline only; native/user evidence still missing  
 **Mode:** `SIMULATED_BOARD_REVIEW`  
 **Owner visual verdict:** All earlier Hisobchi AI visual directions rejected. This **does not** reject verified arithmetic, navigation or validation behavior.
 
@@ -61,8 +61,8 @@
 
 No consensus, average or numeric S+ grade is implied.
 
-**Gate decision:** `NEEDS_EVIDENCE`; partial evidence is sufficient to draft a **provisional** S01 strategy, not to approve S02 or choose design tokens. Owner signoff = `PENDING`.
+**Updated gate decision (2026-11-23):** `PASSED` for the source-based, demonstrative expense-capture MVP scope. Original missing native and user-study evidence remains open for later quality gates. S01 first-job decision separately approved; see `S00-S01-owner-decisions.md`. Owner signoff = `PENDING`.
 
 ## Minimum next decision
 
-Owner should select the primary demonstrable job: `A_RECORD_EXPENSE` (near-term testable MVP) or `B_SAFE_TO_SPEND` (vision, requires reliable finance engine), or provide a different job. Then update `S01-product-strategy.md` with the approved goal.
+Owner selected and approved `A_RECORD_EXPENSE` on 2026-11-23; review record: `S00-S01-owner-decisions.md`. The recorded pre-approval Board discussion remains historical and is not evidence of a completed user study. (near-term testable MVP) or `B_SAFE_TO_SPEND` (vision, requires reliable finance engine), or provide a different job. Then update `S01-product-strategy.md` with the approved goal.
