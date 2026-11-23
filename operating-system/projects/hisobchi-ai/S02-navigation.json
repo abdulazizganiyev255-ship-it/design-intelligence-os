@@ -319,6 +319,33 @@
       "guard": "editor closed",
       "effect": "no mutation",
       "recovery": "HOME"
+    },
+    {
+      "id": "TR-28",
+      "from": "DATE_PICKER",
+      "event": "cancel_for_new",
+      "to": "EDITOR_NEW",
+      "guard": "calendar_origin_editor_new",
+      "effect": "draft date unchanged; no mutation",
+      "recovery": "EDITOR_NEW"
+    },
+    {
+      "id": "TR-29",
+      "from": "DATE_PICKER",
+      "event": "cancel_for_edit",
+      "to": "EDITOR_EDIT",
+      "guard": "calendar_origin_editor_edit",
+      "effect": "draft date unchanged; no mutation",
+      "recovery": "EDITOR_EDIT"
+    },
+    {
+      "id": "TR-30",
+      "from": "DATE_PICKER",
+      "event": "choose_invalid_day",
+      "to": "DATE_PICKER",
+      "guard": "future or invalid day",
+      "effect": "no selection; inline validation",
+      "recovery": "cancel or choose allowed day"
     }
   ],
   "primary_path": [
@@ -331,7 +358,9 @@
     "TR-04",
     "TR-08",
     "TR-11",
-    "TR-23"
+    "TR-23",
+    "TR-28",
+    "TR-29"
   ],
   "invalid_paths": [
     "TR-06"
