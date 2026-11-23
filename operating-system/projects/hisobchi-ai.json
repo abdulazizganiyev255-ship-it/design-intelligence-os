@@ -9,7 +9,7 @@
   "visual_score": null,
   "workflow_stage": "S00",
   "stage_status": {
-    "S00": "IN_PROGRESS",
+    "S00": "NEEDS_EVIDENCE",
     "S01": "NOT_STARTED",
     "S02": "NOT_STARTED",
     "S03": "NOT_STARTED",
@@ -23,10 +23,11 @@
     "S11": "NOT_STARTED",
     "S12": "NOT_STARTED"
   },
-  "reason": "Existing evidence and visual exploration exist but no approved renewed brief/IA and no full native evidence; do not skip gates based on old unapproved designs.",
+  "reason": "Partial web screenshot and source-backed baseline ready, owner rejected previous visual direction. Required S00 scope/owner decision for the primary S01 task remains pending. S01 strategy and S02 IA files are PROVISIONAL drafts, not passed gates.",
   "next_actions": [
-    "Confirm core user job and primary user segment using source evidence",
-    "Record preserve/reject invariant and baseline limitation",
-    "Create S01 task brief, then S02 flows before new visual components"
-  ]
+    "Owner selects the single top user job: expense capture (testable now), live Safe-to-Spend (requires finance engine), or other",
+    "Record explicit S00 closure scope and S01 Owner approval if appropriate",
+    "Only then open S02 information architecture review; do not freeze type/color/tokens before S04"
+  ],
+  "provisional_strategy_proposal": "operating-system/projects/hisobchi-ai/S01-decision-proposal.json"
 }
