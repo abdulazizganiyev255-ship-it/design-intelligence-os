@@ -18,7 +18,7 @@ Four base screens × two viewports plus 3 meaningful alternate states × two vie
 | History / filter-empty | PASS structural geometry | PASS structural geometry | `Mos operatsiya topilmadi` + clear filters |
 | Analytics / no data | PASS structural geometry | PASS structural geometry | no fake chart or growth |
 
-**14/14 PASS** in scripted, limited geometry assertions: viewport width/overflow, primary CTA visibility on Home/History, DEMO labeling, no 145,000 unverified allowance or 92/100 claim, and correct session net on Home/Analytics. Screen renders were manually reviewed as contact sheets at both sizes. These pass marks do **not** mean functionality/accessibility tests passed.
+**14/14 PASS after the compact-label revision** in scripted, limited geometry assertions: viewport width/overflow, primary CTA visibility on Home/History, DEMO labeling, no 145,000 unverified allowance or 92/100 claim, and correct session net on Home/Analytics. Screen renders were manually reviewed as contact sheets at both sizes. These pass marks do **not** mean functionality/accessibility tests passed.
 
 ## Measured browser layout details
 
@@ -41,7 +41,7 @@ Four base screens × two viewports plus 3 meaningful alternate states × two vie
 
 ### Specific risks and change requests
 
-1. **P2 — compact navigation labels:** 320px tab captions use a very small draft size. S03/S05 should explicitly test enlarging/rewrapping labels and real touch targets, not assume the browser's visible text suffices for accessibility.
+1. **P2 — compact navigation labels (targeted revision applied):** Initial 320px tab captions were 10px and 390px captions 11px. The source was revised to use 12px labels at both sizes and **all 14 Chromium geometry cases re-rendered and passed**. Actual touch-target and enlarged-text accessibility testing remains open; a 12px CSS font is not automatically a native accessibility pass.
 2. **P2 — keyboard + Save reachability:** static 320px editor error variant places Save near the viewport bottom. The page can scroll, but Android/iOS keyboard behavior may obscure the save action. Test with native keyboard later, do not assert success now.
 3. **P2 — metrics semantics:** retain `Sof farq — bank balansi emas`, no real Safe-to-Spend. For future real user test ask what 2,741,000 means and whether it can be spent.
 4. **P3 — data chart placeholder:** intentionally empty, labelled layout-only. No fake bars or percent growth. Must be replaced by actual recorded data or truthful no-data state in later implementation.
