@@ -22,3 +22,5 @@ jobs:
         run: python3 tools/validate_operating_system.py
       - name: Hisobchi S00/S01 approvals, S02 spec gate, S03 drafts and finance checks
         run: python3 tools/validate_hisobchi_strategy.py
+      - name: S03 rendered wireframe manifest and source integrity
+        run: python3 tools/validate_s03_render_manifest.py
