@@ -85,7 +85,7 @@
 2. Is the initial audience Uzbek-speaking individual budget trackers, or a narrower segment?
 3. Do we treat a *live* Safe-to-Spend result as a **later separate engineering milestone**?
 
-Until these are accepted: `owner_approved=false`; `S01=IN_PROGRESS`, `S02=NOT_STARTED`, `S04 visual target NOT APPROVED`.
+Until these are accepted: `owner_approved=false`; `S01=NOT_STARTED (documentation draft only; S00 gate pending)`, `S02=NOT_STARTED`, `S04 visual target NOT APPROVED`.
 
 ## Sources and evidence
 
