@@ -8,8 +8,9 @@
 |---|---|---|
 | S00 Evidence & baseline | **PASSED (scoped)** | `S00-evidence-and-gate.md`; owner to confirm scope/top-task |
 | S01 Strategy | **PASSED (first MVP task)** | `S01-product-strategy.md`, `S01-board-review.md`; owner review, not approval |
-| S02 IA | **IN_PROGRESS** (official) | `S02-IA-provisional.md`; cannot mark PASSED until S01 approved |
-| S03–S12 | NOT_STARTED | No visual tokens, components, implementation or release authorized |
+| S02 IA | **PASSED (specification only)** | `S02-IA-provisional.md`; cannot mark PASSED until S01 approved |
+| S03 Wireframes | **IN_PROGRESS** | Grayscale Home/Editor/History/Analytics sketches, quality gate still open |
+| S04–S12 | NOT_STARTED | No visual tokens, components, implementation or release authorized |
 
 The **current project state** is stored in `../hisobchi-ai.json`. `S01-decision-proposal.json` is a review proposal with **owner_approved=false**, not a runtime product configuration.
 
@@ -29,7 +30,7 @@ The **current project state** is stored in `../hisobchi-ai.json`. `S01-decision-
 - `B_SAFE_TO_SPEND`: differentiated vision, **currently blocked** for live numeric promises by missing finance engine and verified balance.
 - `OTHER`: owner-proposed user job, requiring reworked S01.
 
-Owner explicitly approved A for the first MVP; see `S00-S01-owner-decisions.md`. S02 is now in official architecture development. S03 wireframes are still blocked until S02 passes a separate Board gate. The audience hypothesis and real Safe-to-Spend remain unapproved.
+Owner explicitly approved A for the first MVP; see `S00-S01-owner-decisions.md`. S02 passed a scoped architecture **specification** gate in `S02-final-gate.md` after Owner-reported green CI. S03 grayscale wireframes are IN_PROGRESS; no final visual or runtime proof exists. The audience hypothesis and real Safe-to-Spend remain unapproved.
 
 ## Validation
 
@@ -40,3 +41,13 @@ After merging the reviewed PR, GitHub Actions → `Validate Hisobchi Strategy` �
 - This package changes **documentation, test and GitHub config only**, not `hisobchi-ai-mobile` source or a production database.
 - The actual reference source branch is `design/splus-living-ledger-analytics-v03` (a development branch); `main` of Hisobchi AI may differ.
 - Never add banking/real money secrets to public GitHub.
+
+## Current S03 package (2026-11-23)
+
+- `S02-final-gate.md`: scoped Board closeout; green workflow reported by Owner, run ID not independently retrieved.
+- `S03-lowfi-wireframes.md`: four monochrome annotated screens plus compact 320px hierarchy.
+- `S03-board-review.md`: simulated four-role critique, disagreements, evidence gaps.
+- `S03-gate-checklist.md`: requires **actual grayscale render** and cross-viewport inspection before S03 can pass.
+- Upstream implementation issue: [hisobchi-ai-mobile #33](https://github.com/abdulazizganiyev255-ship-it/hisobchi-ai-mobile/issues/33) — editor back accessible label is not origin-aware.
+
+**S03 is not PASSED**. No color tokens or visual concepts are approved.

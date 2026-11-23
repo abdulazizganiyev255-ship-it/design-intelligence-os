@@ -7,7 +7,7 @@
   "source_review_date": "2026-11-23",
   "stage_S00": "PASSED",
   "stage_S01": "PASSED",
-  "stage_S02": "IN_PROGRESS",
+  "stage_S02": "PASSED",
   "decision_status": "APPROVED_BY_OWNER",
   "owner_approved": true,
   "target_user_segment": {
@@ -68,9 +68,14 @@
     "S02_flows": "operating-system/projects/hisobchi-ai/S02-task-flows.md",
     "S02_state_matrix": "operating-system/projects/hisobchi-ai/S02-state-matrix.csv",
     "S02_navigation": "operating-system/projects/hisobchi-ai/S02-navigation.json",
-    "S02_board": "operating-system/projects/hisobchi-ai/S02-board-review.md"
+    "S02_board": "operating-system/projects/hisobchi-ai/S02-board-review.md",
+    "S02_final_gate": "operating-system/projects/hisobchi-ai/S02-final-gate.md",
+    "S03_wireframes": "operating-system/projects/hisobchi-ai/S03-lowfi-wireframes.md",
+    "S03_board": "operating-system/projects/hisobchi-ai/S03-board-review.md",
+    "S03_gate": "operating-system/projects/hisobchi-ai/S03-gate-checklist.md"
   },
   "owner_approval_scope": "FIRST_MVP_PRIMARY_JOB_ONLY",
   "owner_approval_date": "2026-11-23",
-  "owner_approval_evidence": "operating-system/projects/hisobchi-ai/S00-S01-owner-decisions.md"
+  "owner_approval_evidence": "operating-system/projects/hisobchi-ai/S00-S01-owner-decisions.md",
+  "stage_S03": "IN_PROGRESS"
 }
