@@ -1,0 +1,20 @@
+name: Validate Design Council
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  board-session:
+    name: Foundation + Board Session QA
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate Foundation
+        run: python3 tools/validate_foundation.py
+      - name: Validate Board session records
+        run: python3 tools/validate_board_session.py
