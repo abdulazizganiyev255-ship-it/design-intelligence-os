@@ -1,9 +1,9 @@
 # Hisobchi AI — S01 Product Strategy v0.1 (OWNER REVIEW DRAFT)
 
-**Stage:** S01 User, Job & Product Strategy. **Status:** `READY_FOR_OWNER_REVIEW`, **NOT APPROVED**.  
+**Stage:** S01 User, Job & Product Strategy. **Status:** `PASSED` for **first-MVP primary task only**, explicitly approved by Owner on 2026-11-23.  
 **Mode:** One ChatGPT simulating four Board perspectives.  
 **Date:** 2026-11-23. **Data:** `S01-source-truth-contract.md`.  
-**Prerequisite:** S00 is `NEEDS_EVIDENCE`, so this is provisional work only; **S02 and visual direction are not approved**.
+**Prerequisite:** S00 source-based first-MVP scope passed after Owner approval; **S02 is IN_PROGRESS**, but its navigation/design and visual direction are not approved.
 
 ## 1. Precise problem statement
 
@@ -79,13 +79,13 @@
 | STR-04 | Owner again rejects visual direction | Aesthetic gate | S04 two genuinely distinct renders + explicit approval |
 | STR-05 | Too much IA before user need decided | Process blocker | do not approve S02 until Owner accepts S01 |
 
-## 8. Owner decisions still required
+## 8. Owner decision and unresolved research
 
-1. Is **Option A** the correct first MVP primary job, or should another task lead?
+1. **APPROVED:** Option A — expense capture and monitoring as the first MVP primary job (2026-11-23).
 2. Is the initial audience Uzbek-speaking individual budget trackers, or a narrower segment?
 3. Do we treat a *live* Safe-to-Spend result as a **later separate engineering milestone**?
 
-Until these are accepted: `owner_approved=false`; `S01=NOT_STARTED (documentation draft only; S00 gate pending)`, `S02=NOT_STARTED`, `S04 visual target NOT APPROVED`.
+Recorded status: `owner_approved=true` **for first-MVP task only**; `S01=PASSED` (scoped), `S02=IN_PROGRESS`, `S04 visual target NOT APPROVED`. Unconfirmed audience and later finance-engine goals remain open hypotheses. Source: `S00-S01-owner-decisions.md`.
 
 ## Sources and evidence
 
