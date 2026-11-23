@@ -31,6 +31,6 @@ These are stage-readiness opinions, not the final 100-point design quality score
 
 ## Proposed resolution / gate
 
-`S01=IN_PROGRESS`, `status=NEEDS_OWNER_DECISION`. Recommend A for initial design/QA proof, but Owner may choose otherwise. **No S02 PASS, no S03 wireframe lock, no S04 creative selection.**
+`S01=NOT_STARTED (draft prepared)`, `status=NEEDS_OWNER_DECISION`. Recommend A for initial design/QA proof, but Owner may choose otherwise. **No S02 PASS, no S03 wireframe lock, no S04 creative selection.**
 
 **Next observable action:** Owner decides primary job and audience, then Board revisits S01 and records `APPROVED_BY_OWNER` or revision with evidence. Preserve existing finance data contracts. No fake numeric quality score.
