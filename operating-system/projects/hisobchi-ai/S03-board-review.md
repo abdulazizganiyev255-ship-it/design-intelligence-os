@@ -32,3 +32,14 @@ Continue S03 to **rendered grayscale layouts** or equivalent verifiable low-fi a
 - S03 success: evidence from actual low-fi renders supports clear hierarchy at both widths, no major clipping, and action-first flow; critical content/source truth remains readable.
 - S08/S10 later: measure actual user task success, focus/keyboard, screen reader and error recovery on supported devices.
 - Pattern candidate (source-first financial UI) = `REVIEW_PENDING`, not RAG-validated knowledge.
+
+## Round 2 — after actual Chromium renders (2026-11-23)
+
+Four initial monochrome screens and three meaningful variants were rendered at **320×640 and 390×844** on Chromium, DPR=2. All **14/14** limited geometry checks passed. Full capture context: `S03-render-audit.md`. This is not a task study.
+
+- **UX Researcher (4/5 for layout evidence):** Home and History CTA appear above bottom navigation at both widths. Unknown: user comprehension of session net and task speed.
+- **Creative Director (3/5 for grayscale craft):** Visually calmer and action-oriented than earlier card-first variants; do not let this wireframe become a default final visual. S04 still needs original composition options.
+- **Design Architect (4/5 for structure):** One reproducible HTML source with 14 states; touch and keyboard are still not implemented. Compact tab label enlarged from 10px to 12px and 14 render checks passed again.
+- **Critical Reviewer (3/5 for bounded evidence):** HTML geometry is credible but it is not React Native, VoiceOver, TalkBack, real keyboard or a human usability study. S03 gate should remain in progress for targeted gaps rather than auto-pass.
+
+**Board decision:** `S03=IN_PROGRESS`, `REVISE_TARGETED`. Resolved: actual static render exists, small tab label revision, source finance truth preserved. Still open: enlarged-text/touch-target assessment, native keyboard validation and real task comprehension. See `S03-gate-checklist.md`; no visual S+ rating.

@@ -51,3 +51,12 @@ After merging the reviewed PR, GitHub Actions → `Validate Hisobchi Strategy` �
 - Upstream implementation issue: [hisobchi-ai-mobile #33](https://github.com/abdulazizganiyev255-ship-it/hisobchi-ai-mobile/issues/33) — editor back accessible label is not origin-aware.
 
 **S03 is not PASSED**. No color tokens or visual concepts are approved.
+
+## S03 actual Chromium render evidence (revision)
+
+- `S03-wireframe-render.html`: source-verified grayscale Home/Editor/History/Analytics mockup (query parameters `screen` and `state`). Static, not a runnable finance app.
+- `S03-browser-qa.json`: 14 browser viewports/state geometry test records with SHA-256-linked source file.
+- `S03-render-audit.md`: screenshot interpretation, compact label correction and remaining native/UX risks.
+- `tools/validate_s03_render_manifest.py`: checks artifact/source digest and prevents premature S03 status promotion; included in manual CI.
+
+**Gate:** S03 remains IN_PROGRESS even after 14/14 browser geometry checks; real keyboard and scaled-text tests remain open, S04 not started.
