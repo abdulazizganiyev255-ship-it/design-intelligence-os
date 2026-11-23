@@ -1,0 +1,3 @@
+# Repository custom instructions
+
+Read `AGENTS.md` first. This is a **documentation-first, ChatGPT-operated MVP-01**; do not claim autonomous design agents or running RAG components. Respect Uzbek product text and preserve external standards URLs. Do not fabricate audits, screenshots, benchmarks, accessibility compliance or user testing. Keep the seven rubric weight totals at exactly 100, all issue evidence traceable, and statuses consistent with `evaluations/scorecard.schema.json`. Run `python tools/validate_foundation.py` before proposing a merge. Changes affecting quality gates need Owner approval under `governance/decision-policy.md`.
