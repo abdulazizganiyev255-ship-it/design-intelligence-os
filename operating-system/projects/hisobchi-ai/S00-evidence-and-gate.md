@@ -61,8 +61,8 @@
 
 No consensus, average or numeric S+ grade is implied.
 
-**Updated gate decision (2026-11-23):** `PASSED` for the source-based, demonstrative expense-capture MVP scope. Original missing native and user-study evidence remains open for later quality gates. S01 first-job decision separately approved; see `S00-S01-owner-decisions.md`. Owner signoff = `PENDING`.
+**Updated gate decision (2026-11-23):** `PASSED` for the source-based, demonstrative expense-capture MVP scope. Owner signed off on the scope; see `S00-S01-owner-decisions.md`. Native and user-study evidence remain open for later quality gates.
 
-## Minimum next decision
+## Owner decision and next gate
 
-Owner selected and approved `A_RECORD_EXPENSE` on 2026-11-23; review record: `S00-S01-owner-decisions.md`. The recorded pre-approval Board discussion remains historical and is not evidence of a completed user study. (near-term testable MVP) or `B_SAFE_TO_SPEND` (vision, requires reliable finance engine), or provide a different job. Then update `S01-product-strategy.md` with the approved goal.
+Owner explicitly approved `A_RECORD_EXPENSE` as the first MVP's primary task on 2026-11-23. S00 is PASSED **only for source-backed MVP intake**, S01 is PASSED **only for first-job strategy**, and S02 is IN_PROGRESS. See `S00-S01-owner-decisions.md`. The earlier four-role scores above are historical pre-approval perspectives, not real user study results.
