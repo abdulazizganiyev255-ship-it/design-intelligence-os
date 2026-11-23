@@ -1,0 +1,268 @@
+{
+  "project_id": "hisobchi-ai",
+  "stage": "S03",
+  "stage_status": "IN_PROGRESS",
+  "date": "2026-11-23",
+  "artifacts_source": "operating-system/projects/hisobchi-ai/S03-wireframe-render.html",
+  "source_sha256": "c9909187a2540373fdcb637504b9338ee9a92fef805e3630cbee4464572fdb04",
+  "browser": "Chromium 144.0.7559.96 Debian 13",
+  "device_scale_factor": 2,
+  "render_mode": "headless local Chromium, deterministic HTML/CSS, no external network",
+  "cases": [
+    {
+      "file": "home_default_320x640.png",
+      "viewport_css": [
+        320,
+        640
+      ],
+      "png_pixels": [
+        640,
+        1280
+      ],
+      "screen": "home",
+      "state": "default",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "editor_default_320x640.png",
+      "viewport_css": [
+        320,
+        640
+      ],
+      "png_pixels": [
+        640,
+        1280
+      ],
+      "screen": "editor",
+      "state": "default",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "history_default_320x640.png",
+      "viewport_css": [
+        320,
+        640
+      ],
+      "png_pixels": [
+        640,
+        1280
+      ],
+      "screen": "history",
+      "state": "default",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "analytics_default_320x640.png",
+      "viewport_css": [
+        320,
+        640
+      ],
+      "png_pixels": [
+        640,
+        1280
+      ],
+      "screen": "analytics",
+      "state": "default",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "editor_error_320x640.png",
+      "viewport_css": [
+        320,
+        640
+      ],
+      "png_pixels": [
+        640,
+        1280
+      ],
+      "screen": "editor",
+      "state": "error",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "history_empty_320x640.png",
+      "viewport_css": [
+        320,
+        640
+      ],
+      "png_pixels": [
+        640,
+        1280
+      ],
+      "screen": "history",
+      "state": "empty",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "analytics_empty_320x640.png",
+      "viewport_css": [
+        320,
+        640
+      ],
+      "png_pixels": [
+        640,
+        1280
+      ],
+      "screen": "analytics",
+      "state": "empty",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "home_default_390x844.png",
+      "viewport_css": [
+        390,
+        844
+      ],
+      "png_pixels": [
+        780,
+        1688
+      ],
+      "screen": "home",
+      "state": "default",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "editor_default_390x844.png",
+      "viewport_css": [
+        390,
+        844
+      ],
+      "png_pixels": [
+        780,
+        1688
+      ],
+      "screen": "editor",
+      "state": "default",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "history_default_390x844.png",
+      "viewport_css": [
+        390,
+        844
+      ],
+      "png_pixels": [
+        780,
+        1688
+      ],
+      "screen": "history",
+      "state": "default",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "analytics_default_390x844.png",
+      "viewport_css": [
+        390,
+        844
+      ],
+      "png_pixels": [
+        780,
+        1688
+      ],
+      "screen": "analytics",
+      "state": "default",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "editor_error_390x844.png",
+      "viewport_css": [
+        390,
+        844
+      ],
+      "png_pixels": [
+        780,
+        1688
+      ],
+      "screen": "editor",
+      "state": "error",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "history_empty_390x844.png",
+      "viewport_css": [
+        390,
+        844
+      ],
+      "png_pixels": [
+        780,
+        1688
+      ],
+      "screen": "history",
+      "state": "empty",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    },
+    {
+      "file": "analytics_empty_390x844.png",
+      "viewport_css": [
+        390,
+        844
+      ],
+      "png_pixels": [
+        780,
+        1688
+      ],
+      "screen": "analytics",
+      "state": "empty",
+      "horizontal_overflow": false,
+      "demo_labeled": true,
+      "geometry_assertions": "PASS",
+      "runtime_task_test": "NOT_TESTED"
+    }
+  ],
+  "totals": {
+    "pass": 14,
+    "fail": 0,
+    "scope": "layout geometry, overflow, first-screen CTA, demo labeling, finance sample integrity"
+  },
+  "limitations": [
+    "No user study",
+    "No actual React Native functionality",
+    "No keyboard-open state",
+    "No native VoiceOver or TalkBack",
+    "Static controls are not interactive",
+    "Browser geometry pass is not UX approval",
+    "Binary PNGs in conversation deliverable zip, not committed as GitHub files"
+  ],
+  "board_decision": "S03 REVISE_TARGETED; final S03 gate not yet passed",
+  "owner_visual_approval": false,
+  "quality_total_score": null
+}
