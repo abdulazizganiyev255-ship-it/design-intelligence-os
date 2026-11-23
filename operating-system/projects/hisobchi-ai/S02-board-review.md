@@ -1,3 +1,5 @@
+> Historical initial S02 Board review recorded before the final gate. Superseded for stage status by [`S02-final-gate.md`](S02-final-gate.md). Original observations and dissent remain in this file.
+
 # Hisobchi AI — S02 Board review 001 (official in-progress review)
 
 **Date:** 2026-11-23  
