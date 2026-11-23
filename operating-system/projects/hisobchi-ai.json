@@ -1,0 +1,32 @@
+{
+  "project_id": "hisobchi-ai",
+  "mode": "SIMULATED_BOARD_REVIEW",
+  "owner_visual_verdict": "ALL_PREVIOUS_VISUAL_DIRECTIONS_REJECTED",
+  "source_repo": "https://github.com/abdulazizganiyev255-ship-it/hisobchi-ai-mobile",
+  "latest_baseline": "baseline/hisobchi-ai/BASELINE-001.md",
+  "visual_target_approved": false,
+  "production_release_approved": false,
+  "visual_score": null,
+  "workflow_stage": "S00",
+  "stage_status": {
+    "S00": "IN_PROGRESS",
+    "S01": "NOT_STARTED",
+    "S02": "NOT_STARTED",
+    "S03": "NOT_STARTED",
+    "S04": "NOT_STARTED",
+    "S05": "NOT_STARTED",
+    "S06": "NOT_STARTED",
+    "S07": "NOT_STARTED",
+    "S08": "NOT_STARTED",
+    "S09": "NOT_STARTED",
+    "S10": "NOT_STARTED",
+    "S11": "NOT_STARTED",
+    "S12": "NOT_STARTED"
+  },
+  "reason": "Existing evidence and visual exploration exist but no approved renewed brief/IA and no full native evidence; do not skip gates based on old unapproved designs.",
+  "next_actions": [
+    "Confirm core user job and primary user segment using source evidence",
+    "Record preserve/reject invariant and baseline limitation",
+    "Create S01 task brief, then S02 flows before new visual components"
+  ]
+}
